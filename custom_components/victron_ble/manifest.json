@@ -7,7 +7,7 @@
       "manufacturer_data_start": [16]
     }
   ],
-  "codeowners": ["@keshavdv"],
+  "codeowners": ["@keshavdv", "@stanislaw2002"],
   "config_flow": true,
   "dependencies": ["bluetooth"],
   "documentation": "https://github.com/keshavdv/victron-hacs/",
