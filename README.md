@@ -1,6 +1,10 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg?style=for-the-badge)](https://github.com/hacs/integration)
 
-# Victron Instant Readout Integration
+# Victron Instant Readout Integration (Fork)
+
+> **This is a fork of [keshavdv/victron-hacs](https://github.com/keshavdv/victron-hacs).**
+>
+> **What's different:** The upstream integration only exposes a single set of output sensors for AC Chargers (output 1). This fork adds **individual sensors for all 3 AC charger outputs** — voltage, current, and power for outputs 1, 2, and 3 — so you can monitor each channel independently in Home Assistant.
 
 This integration allows exposing data from Victron devices with Instant Readout enabled in Home Assistant.
 
@@ -42,6 +46,7 @@ Supported Devices & Entities:
 - AC Charger
   - Output Voltage 1|2|3
   - Output Current 1|2|3
+  - Output Power 1|2|3
   - Operation Mode
   - Temperature (°C)
   - AC Current
