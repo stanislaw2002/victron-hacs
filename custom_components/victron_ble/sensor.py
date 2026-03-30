@@ -184,6 +184,87 @@ SENSOR_DESCRIPTIONS: Dict[Tuple[SensorDeviceClass, Optional[Units]], Any] = {
         native_unit_of_measurement=Units.POWER_WATT,
         state_class=SensorStateClass.MEASUREMENT,
     ),
+    (
+        VictronSensor.OUTPUT_VOLTAGE_1,
+        Units.ELECTRIC_POTENTIAL_VOLT,
+    ): SensorEntityDescription(
+        key=VictronSensor.OUTPUT_VOLTAGE_1,
+        device_class=SensorDeviceClass.VOLTAGE,
+        native_unit_of_measurement=Units.ELECTRIC_POTENTIAL_VOLT,
+        state_class=SensorStateClass.MEASUREMENT,
+    ),
+    (
+        VictronSensor.OUTPUT_VOLTAGE_2,
+        Units.ELECTRIC_POTENTIAL_VOLT,
+    ): SensorEntityDescription(
+        key=VictronSensor.OUTPUT_VOLTAGE_2,
+        device_class=SensorDeviceClass.VOLTAGE,
+        native_unit_of_measurement=Units.ELECTRIC_POTENTIAL_VOLT,
+        state_class=SensorStateClass.MEASUREMENT,
+    ),
+    (
+        VictronSensor.OUTPUT_VOLTAGE_3,
+        Units.ELECTRIC_POTENTIAL_VOLT,
+    ): SensorEntityDescription(
+        key=VictronSensor.OUTPUT_VOLTAGE_3,
+        device_class=SensorDeviceClass.VOLTAGE,
+        native_unit_of_measurement=Units.ELECTRIC_POTENTIAL_VOLT,
+        state_class=SensorStateClass.MEASUREMENT,
+    ),
+    (
+        VictronSensor.OUTPUT_CURRENT_1,
+        Units.ELECTRIC_CURRENT_AMPERE,
+    ): SensorEntityDescription(
+        key=VictronSensor.OUTPUT_CURRENT_1,
+        device_class=SensorDeviceClass.CURRENT,
+        native_unit_of_measurement=Units.ELECTRIC_CURRENT_AMPERE,
+        state_class=SensorStateClass.MEASUREMENT,
+    ),
+    (
+        VictronSensor.OUTPUT_CURRENT_2,
+        Units.ELECTRIC_CURRENT_AMPERE,
+    ): SensorEntityDescription(
+        key=VictronSensor.OUTPUT_CURRENT_2,
+        device_class=SensorDeviceClass.CURRENT,
+        native_unit_of_measurement=Units.ELECTRIC_CURRENT_AMPERE,
+        state_class=SensorStateClass.MEASUREMENT,
+    ),
+    (
+        VictronSensor.OUTPUT_CURRENT_3,
+        Units.ELECTRIC_CURRENT_AMPERE,
+    ): SensorEntityDescription(
+        key=VictronSensor.OUTPUT_CURRENT_3,
+        device_class=SensorDeviceClass.CURRENT,
+        native_unit_of_measurement=Units.ELECTRIC_CURRENT_AMPERE,
+        state_class=SensorStateClass.MEASUREMENT,
+    ),
+    (
+        VictronSensor.OUTPUT_POWER_1,
+        Units.POWER_WATT,
+    ): SensorEntityDescription(
+        key=VictronSensor.OUTPUT_POWER_1,
+        device_class=SensorDeviceClass.POWER,
+        native_unit_of_measurement=Units.POWER_WATT,
+        state_class=SensorStateClass.MEASUREMENT,
+    ),
+    (
+        VictronSensor.OUTPUT_POWER_2,
+        Units.POWER_WATT,
+    ): SensorEntityDescription(
+        key=VictronSensor.OUTPUT_POWER_2,
+        device_class=SensorDeviceClass.POWER,
+        native_unit_of_measurement=Units.POWER_WATT,
+        state_class=SensorStateClass.MEASUREMENT,
+    ),
+    (
+        VictronSensor.OUTPUT_POWER_3,
+        Units.POWER_WATT,
+    ): SensorEntityDescription(
+        key=VictronSensor.OUTPUT_POWER_3,
+        device_class=SensorDeviceClass.POWER,
+        native_unit_of_measurement=Units.POWER_WATT,
+        state_class=SensorStateClass.MEASUREMENT,
+    ),
     (SensorDeviceClass.BATTERY, Units.PERCENTAGE): SensorEntityDescription(
         key=f"{SensorDeviceClass.BATTERY}_{Units.PERCENTAGE}",
         device_class=SensorDeviceClass.BATTERY,

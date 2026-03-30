@@ -34,6 +34,15 @@ class VictronSensor(StrEnum):
     INPUT_CURRENT = "input_current"
     OUTPUT_CURRENT = "output_current"
     OUTPUT_POWER = "output_power"
+    OUTPUT_VOLTAGE_1 = "output_voltage_1"
+    OUTPUT_VOLTAGE_2 = "output_voltage_2"
+    OUTPUT_VOLTAGE_3 = "output_voltage_3"
+    OUTPUT_CURRENT_1 = "output_current_1"
+    OUTPUT_CURRENT_2 = "output_current_2"
+    OUTPUT_CURRENT_3 = "output_current_3"
+    OUTPUT_POWER_1 = "output_power_1"
+    OUTPUT_POWER_2 = "output_power_2"
+    OUTPUT_POWER_3 = "output_power_3"
     OFF_REASON = "off_reason"
     CHARGER_ERROR = "charger_error"
     STARTER_BATTERY_VOLTAGE = "starter_battery_voltage"
@@ -141,17 +150,45 @@ class VictronBluetoothDeviceData(BluetoothData):
                 device_class=SensorDeviceClass.ENUM,
             )
             self.update_sensor(
-                key=VictronSensor.OUTPUT_VOLTAGE,
+                key=VictronSensor.OUTPUT_VOLTAGE_1,
                 name="Output Voltage 1",
                 native_unit_of_measurement=Units.ELECTRIC_POTENTIAL_VOLT,
                 native_value=parsed.get_output_voltage1(),
                 device_class=SensorDeviceClass.VOLTAGE,
             )
             self.update_sensor(
-                key=VictronSensor.OUTPUT_CURRENT,
+                key=VictronSensor.OUTPUT_VOLTAGE_2,
+                name="Output Voltage 2",
+                native_unit_of_measurement=Units.ELECTRIC_POTENTIAL_VOLT,
+                native_value=parsed.get_output_voltage2(),
+                device_class=SensorDeviceClass.VOLTAGE,
+            )
+            self.update_sensor(
+                key=VictronSensor.OUTPUT_VOLTAGE_3,
+                name="Output Voltage 3",
+                native_unit_of_measurement=Units.ELECTRIC_POTENTIAL_VOLT,
+                native_value=parsed.get_output_voltage3(),
+                device_class=SensorDeviceClass.VOLTAGE,
+            )
+            self.update_sensor(
+                key=VictronSensor.OUTPUT_CURRENT_1,
                 name="Output Current 1",
                 native_unit_of_measurement=Units.ELECTRIC_CURRENT_AMPERE,
                 native_value=parsed.get_output_current1(),
+                device_class=SensorDeviceClass.CURRENT,
+            )
+            self.update_sensor(
+                key=VictronSensor.OUTPUT_CURRENT_2,
+                name="Output Current 2",
+                native_unit_of_measurement=Units.ELECTRIC_CURRENT_AMPERE,
+                native_value=parsed.get_output_current2(),
+                device_class=SensorDeviceClass.CURRENT,
+            )
+            self.update_sensor(
+                key=VictronSensor.OUTPUT_CURRENT_3,
+                name="Output Current 3",
+                native_unit_of_measurement=Units.ELECTRIC_CURRENT_AMPERE,
+                native_value=parsed.get_output_current3(),
                 device_class=SensorDeviceClass.CURRENT,
             )
             self.update_predefined_sensor(
@@ -165,13 +202,29 @@ class VictronBluetoothDeviceData(BluetoothData):
                 name="AC Current",
             )
 
-            # Additional Sensor
+            # Additional Sensors - Power for each output
             self.update_sensor(
-                key=VictronSensor.OUTPUT_POWER,
+                key=VictronSensor.OUTPUT_POWER_1,
                 name="Output Power 1",
                 native_unit_of_measurement=Units.POWER_WATT,
                 native_value=parsed.get_output_current1()
                 * parsed.get_output_voltage1(),
+                device_class=SensorDeviceClass.POWER,
+            )
+            self.update_sensor(
+                key=VictronSensor.OUTPUT_POWER_2,
+                name="Output Power 2",
+                native_unit_of_measurement=Units.POWER_WATT,
+                native_value=parsed.get_output_current2()
+                * parsed.get_output_voltage2(),
+                device_class=SensorDeviceClass.POWER,
+            )
+            self.update_sensor(
+                key=VictronSensor.OUTPUT_POWER_3,
+                name="Output Power 3",
+                native_unit_of_measurement=Units.POWER_WATT,
+                native_value=parsed.get_output_current3()
+                * parsed.get_output_voltage3(),
                 device_class=SensorDeviceClass.POWER,
             )
 
